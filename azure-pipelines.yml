@@ -15,14 +15,14 @@ steps:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'ARO'
     version: '4.4'
-    cmd: 'oc start-build nodejs-ex --follow'
+    cmd: 'oc start-build nodejs-ex --follow -n demo'
   
 - task: oc-cmd@2
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'ARO'
     version: '4.4'
-    cmd: 'oc status'
+    cmd: 'oc status -n demo'
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
